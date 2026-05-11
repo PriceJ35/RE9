@@ -1,0 +1,176 @@
+/* ========== Guide Page Styles ========== */
+.guide-page {
+    padding: 32px 0 64px;
+    min-height: 80vh;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--red);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: color 0.15s;
+}
+.back-link:hover { color: var(--red-hover); }
+
+.guide-title {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.guide-source {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* ========== Guide Content ========== */
+.guide-content h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--red);
+    margin: 32px 0 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    letter-spacing: -0.01em;
+}
+.guide-content h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.guide-content p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.guide-content strong {
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* ========== Image Grid ========== */
+.guide-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 12px;
+    margin: 16px 0 20px;
+}
+
+.guide-images img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.25s;
+    display: block;
+    background: var(--bg-alt);
+}
+
+.guide-images img:hover {
+    border-color: var(--red);
+    box-shadow: var(--shadow-md);
+    transform: scale(1.01);
+}
+
+/* ========== Walkthrough Navigation ========== */
+.walk-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 32px 0;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.walk-nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+}
+.walk-nav-link:hover, .walk-nav-link:active {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
+}
+
+/* ========== Walkthrough Index Cards ========== */
+.walk-index-card {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+    color: var(--text);
+    transition: all 0.25s;
+    align-items: flex-start;
+}
+.walk-index-card:hover {
+    border-color: transparent;
+    box-shadow: var(--shadow-lg);
+    color: var(--text);
+}
+.walk-index-num {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--red);
+    background: var(--red-light);
+    padding: 6px 14px;
+    border-radius: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.walk-index-body h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.walk-index-body p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    .guide-title { font-size: 24px; }
+    .guide-content h2 { font-size: 18px; }
+    .guide-content p { font-size: 14px; }
+    .guide-images {
+        grid-template-columns: 1fr;
+    }
+    .walk-index-card {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .guide-page { padding: 20px 0 40px; }
+    .guide-title { font-size: 20px; }
+    .guide-images img { border-radius: 8px; }
+}

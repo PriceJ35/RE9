@@ -140,6 +140,12 @@ a:hover { color: var(--red-hover); }
 .section-header { text-align: center; margin-bottom: 40px; }
 .section-title { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: var(--text); margin-bottom: 8px; }
 .section-sub { font-size: 15px; color: var(--text-light); max-width: 500px; margin: 0 auto; }
+.section-link {
+    display: inline-block; padding: 6px 16px; border-radius: 6px;
+    font-size: 13px; font-weight: 600; color: var(--red);
+    background: var(--red-light); transition: all 0.2s;
+}
+.section-link:hover { background: var(--red); color: #fff; }
 
 /* ========== Character Cards ========== */
 .char-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
