@@ -305,6 +305,76 @@ a:hover { color: var(--red-hover); }
 .craft-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
 .craft-card p { font-size: 12px; color: var(--text-light); line-height: 1.45; }
 
+/* ========== Safe Codes ========== */
+.safe-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.safe-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 20px 24px;
+    transition: all 0.25s; position: relative; overflow: hidden;
+}
+.safe-card:hover { box-shadow: var(--shadow-md); border-color: transparent; }
+.safe-location { font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.safe-location .safe-icon { font-size: 18px; }
+.safe-code-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.safe-code {
+    flex: 1; min-width: 160px; padding: 10px 14px;
+    border-radius: 8px; font-size: 13px;
+}
+.safe-code.standard { background: var(--blue-bg); color: var(--blue); }
+.safe-code.insanity { background: var(--red-light); color: var(--red); }
+.safe-code .code-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.7; display: block; margin-bottom: 2px; }
+.safe-code .code-value { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ========== Puzzles ========== */
+.puzzle-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.puzzle-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px;
+    transition: all 0.25s; position: relative; overflow: hidden;
+}
+.puzzle-card:hover { box-shadow: var(--shadow-md); border-color: transparent; }
+.puzzle-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 3px; height: 0; background: var(--purple);
+    border-radius: 0 2px 2px 0; transition: height 0.25s;
+}
+.puzzle-card:hover::before { height: 100%; }
+.puzzle-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.puzzle-answer {
+    display: inline-block; background: var(--green-bg); color: var(--green);
+    padding: 3px 12px; border-radius: 6px; font-size: 13px; font-weight: 700;
+    margin-bottom: 8px;
+}
+.puzzle-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+
+/* ========== Endings ========== */
+.end-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.end-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px;
+    transition: all 0.25s; position: relative; overflow: hidden;
+}
+.end-card:hover { box-shadow: var(--shadow-md); border-color: transparent; }
+.end-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; transition: opacity 0.25s; opacity: 0;
+}
+.end-card:hover::before { opacity: 1; }
+.end-card.bad::before { background: var(--red); }
+.end-card.good::before { background: var(--green); }
+.end-card.hidden::before { background: var(--purple); }
+.end-type {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.03em; padding: 3px 10px; border-radius: 4px;
+    margin-bottom: 10px; display: inline-block;
+}
+.end-type.bad { background: var(--red-light); color: var(--red); }
+.end-type.good { background: var(--green-bg); color: var(--green); }
+.end-type.hidden { background: var(--purple-bg); color: var(--purple); }
+.end-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.end-trigger { font-size: 12px; color: var(--text-light); font-style: italic; margin-bottom: 8px; }
+.end-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+
 /* ========== Footer ========== */
 .footer {
     background: var(--text); color: #cbd5e1; padding: 48px 0 28px; position: relative;
@@ -369,6 +439,9 @@ a:hover { color: var(--red-hover); }
     .tips-grid { grid-template-columns: 1fr; gap: 10px; }
     .tip-card { padding: 16px; }
     .craft-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .safe-grid { grid-template-columns: 1fr; gap: 10px; }
+    .puzzle-grid { grid-template-columns: 1fr; gap: 10px; }
+    .end-grid { grid-template-columns: 1fr; gap: 10px; }
     .footer-grid { grid-template-columns: 1fr; gap: 24px; }
     .footer { padding: 32px 0 20px; }
 }
